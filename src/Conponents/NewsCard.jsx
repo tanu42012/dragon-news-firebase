@@ -1,8 +1,10 @@
 import { FaEye } from 'react-icons/fa';
 import { FaBookmark } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     thumbnail_url,
@@ -41,7 +43,7 @@ const NewsCard = ({ news }) => {
         <h2 className="card-title text-lg">{title}</h2>
         <p className="text-sm text-gray-700">
           {details.length > 150 ? `${details.slice(0, 150)}...` : details}
-          <span className="text-blue-500 font-medium cursor-pointer"> Read More</span>
+          <Link to={`/news-details/${id}`} className="text-blue-500 font-medium cursor-pointer"> Read More</Link>
         </p>
 
         <div className="flex justify-between items-center mt-4">
